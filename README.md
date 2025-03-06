@@ -1,11 +1,14 @@
-# stats220
+![image](https://github.com/user-attachments/assets/4a36a295-de6b-4cd7-96e6-13ff25e645be)# stats220 
 
-This is my repo for STATS 220. 
+**This is my repo for STATS 220.** 
 
-A little about me:
+## A little about me:
 
-- I am undertaking a degree in Statistics and Operations and Supply Chain Management
-- I am taking STATS 220 because I want to improve my skills using R for data acquisition and manipulation.
-- I am interested in learning about the most efficient ways of doing these things.
+* I am undertaking a degree in Statistics and Operations and Supply Chain Management
+* I am taking STATS 220 because I want to improve my skills using R for data acquisition and manipulation.
+* I am interested in learning about the most efficient ways of doing these things.
 
-A meme that captures how I currently feel about my university studies is ![]([https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif](https://media1.tenor.com/m/0q4lN1_ApMoAAAAC/dory-marlin.gif))
+### *A meme that captures how I currently feel about my university studies is ![](https://media1.tenor.com/m/0q4lN1_ApMoAAAAC/dory-marlin.gif)*
+
+**Here is a link to the stats220 course outline:** https://courseoutline.auckland.ac.nz/dco/course/STATS/220/1253
+![image](https://github.com/user-attachments/assets/3a3756f8-6b9a-43d4-9102-510e3491f109)
