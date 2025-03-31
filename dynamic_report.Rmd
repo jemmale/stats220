@@ -1,0 +1,89 @@
+---
+title: My dynamic report
+subtitle: How healthy do I eat?
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+body {
+  color: #474954;
+  background-color: #DFE9AC;
+  font-family: monospace;
+}
+
+h1 {
+  color: #F7FFF7;
+  background-color: #1A895D;
+  font-family: monospace;
+  font-weight: bold;
+  padding: 15px;
+  font-size: 20px;
+}
+
+h2{
+  color: #F7FFF7;
+  background-color: #1A895D;
+  font-family: monospace;
+  font-weight: bold;
+  padding: 3px;
+  font-size: 15px;
+```
+
+# What's going on with this data?
+
+Let's explore some summary statistics and make some graphs and see what we find.
+
+## Summary 1: What is the max amount of grams of protein?
+
+```{r}
+library(tidyverse)
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSYdDVLpDF2qe3SjXviKt_gwCNLvyCnTGAPlllPGQm7SNkAUVX7jttBRFgBcYrOd7ujuUPRT0IXgklb/pub?output=csv")
+latest_data <- logged_data %>% 
+  select(-`Column 4`) %>% #remove column 4
+  rename("Taste" = 2, #rename columns for easy read
+         "Number_of_Fruit_Vege" = 3,
+         "Grams_of_Protein" = 4,
+         "Sweet_Savoury" = 5) 
+max_protein <- max(latest_data$Grams_of_Protein) #max amount of protein
+cat(max_protein)
+```
+
+
+## Summary 2: What is the average taste of a meal (stars 1-5)?
+
+
+```{r}
+#Summary 2
+average_taste <- mean(latest_data$Taste) #average taste 
+cat(average_taste)
+```
+
+
+## Graph 1: Sweet or Savoury?
+```{r}
+#Graph 1
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(y = Sweet_Savoury),
+               fill = "#97BE11")+
+  theme_minimal()+
+  labs(title = "Sweet or Savoury?", x = "count", y = "Sweet or Savoury")
+```
+
+
+
+
+## Graph 2: Overall taste rating of meals
+```{r}
+#Graph 2
+ggplot(latest_data, aes(x = factor(Taste, levels = 1:5))) +
+  geom_bar(fill = "#FFDA1F") +
+  labs(x = "Taste Rating (1-5 stars)", y = "Count", title = "Overall Taste Rating of Meals") +
+  theme_minimal() +
+  scale_x_discrete(limits = as.character(1:5))
+```
