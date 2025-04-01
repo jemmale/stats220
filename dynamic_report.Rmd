@@ -72,10 +72,10 @@ latest_data %>%
   geom_bar(aes(y = Sweet_Savoury),
                fill = "#97BE11")+
   theme_minimal()+
-  labs(title = "Overall count comparison of sweet and savoury meals", x = "count", y = "Sweet or Savoury")
+  labs(title = "Overall count comparison of sweet and savoury meals", x = "Count", y = "Flavour Profile")
 ```
 
-This plot shows the overall count comparison of sweet and savoury meals. The type of meal with the highest count was sweet at 12 meals. 
+This plot shows the overall count comparison of sweet and savoury meals. The type of meal with the highest count was sweet at 12 meals. This indicates I consume more sweet meals than savoury.
 
 
 
