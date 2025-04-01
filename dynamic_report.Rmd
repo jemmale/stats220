@@ -6,7 +6,7 @@ output: html_fragment
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
-
+library(magick)
 ```
 
 ```{css}
@@ -36,7 +36,7 @@ h2{
 
 # What's going on with this data?
 
-Let's explore some summary statistics and make some graphs and see what we find.
+Let's explore some summary statistics and make some graphs and see what we find out about my eating habits.
 
 ## Summary 1: What is the max amount of grams of protein?
 
@@ -72,9 +72,10 @@ latest_data %>%
   geom_bar(aes(y = Sweet_Savoury),
                fill = "#97BE11")+
   theme_minimal()+
-  labs(title = "Sweet or Savoury?", x = "count", y = "Sweet or Savoury")
+  labs(title = "Overall count comparison of sweet and savoury meals", x = "count", y = "Sweet or Savoury")
 ```
 
+This plot shows the overall count comparison of sweet and savoury meals. The type of meal with the highest count was sweet at 12 meals. 
 
 
 
@@ -87,3 +88,5 @@ ggplot(latest_data, aes(x = factor(Taste, levels = 1:5))) +
   theme_minimal() +
   scale_x_discrete(limits = as.character(1:5))
 ```
+
+This plot shows the count of the rating of my meals out of 5 stars. The rating with the highest count was 5 stars where 15 of my meals I gave a 5 star rating.
